@@ -55,6 +55,47 @@ python pitch_compare.py 原唱.mp3 学生.mp3 -o output/
 - `rhythm_analysis.png`：节奏分析（偏离对角线=快了/慢了）
 - `analysis.txt`：数值报告
 
+## 示例输出
+
+### 音高对比图
+
+![Pitch Comparison](examples/pitch_comparison.png)
+
+- 上图：原始音高曲线（蓝=原唱，红=学生）
+- 中图：DTW对齐后的音高曲线
+- 下图：音高偏差（绿=准，橙=略偏，红=严重偏）
+
+### 频谱图对比
+
+![Spectrogram Comparison](examples/spectrogram_comparison.png)
+
+### 节奏分析
+
+![Rhythm Analysis](examples/rhythm_analysis.png)
+
+偏离对角线表示节奏偏差（快了或慢了）
+
+### 分析报告
+
+```
+音准分析报告
+================
+
+整体统计：
+- 平均偏差: -222.4 cents （偏低）
+- 偏差标准差: 385.7 cents
+- 中位数偏差: -170.0 cents
+
+音准分布：
+- 准确 (<25 cents): 268 帧 (7.4%)
+- 略偏 (25-50 cents): 187 帧 (5.1%)
+- 严重偏 (>50 cents): 3185 帧 (87.5%)
+
+总体评价：
+需要大量练习。仅7%的音准在可接受范围内。
+整体趋势：偏低。建议增加气息支撑，提高音调。
+```
+
 ## 如何解读
 
 ### 音高偏差（cents）
